@@ -47,3 +47,44 @@ Unity Hub を起動し、右上の「開く」をクリックして、先ほど�
 
 ![image](https://user-images.githubusercontent.com/164193/230744627-c6280610-a64f-4976-815a-7653d26434d5.png)
 
+# その他
+
+外部ファイルからパラメータを指定して、球の色をかえるサンプルがあります。
+
+## 外部ファイルについて
+
+パラメータ設定用の外部ファイルは、本プロジェクトの `sample/test.csv` に直接値を書き込みします。
+現時点での設定書式は、１行のみで、数値を文字列で入力する感じです。
+
+例：
+```
+500
+```
+
+また、設定できる範囲は 0〜1000 の値です。
+
+## 実行方法
+
+本プロジェクトのプロジェクトビューの `Assets/Scens` から `07_materials` をダブルクリックしてください。
+
+![スクリーンショット 2023-05-15 20 06 39](https://github.com/tmori/unity-tutorial/assets/164193/3cad7332-b7cb-47fb-8588-cb6ba898fcfe)
+
+成功するとこうなります。
+
+![スクリーンショット 2023-05-15 20 07 23](https://github.com/tmori/unity-tutorial/assets/164193/ffd168a1-926c-428f-ab5f-80344096aaf3)
+
+この状態でUnity再生ボタンを押下すると、こんな感じで球に色がつきます。
+
+![スクリーンショット 2023-05-15 20 08 37](https://github.com/tmori/unity-tutorial/assets/164193/a05c5d22-3e7f-489f-aa94-794a27926434)
+
+この場合は、test.csv に 200 を設定した状態です。
+
+これを1000 にすると真っ赤になります。
+
+![スクリーンショット 2023-05-15 20 10 06](https://github.com/tmori/unity-tutorial/assets/164193/ae321635-1681-40a4-8029-653b2893278f)
+
+逆に 0 にすると、真っ白になります。
+
+![スクリーンショット 2023-05-15 20 11 06](https://github.com/tmori/unity-tutorial/assets/164193/573ffc29-4d30-4d9f-9da4-d59e13cc12c4)
+
+
