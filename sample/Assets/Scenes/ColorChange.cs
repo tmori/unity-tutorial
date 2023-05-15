@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.IO;
 using UnityEngine;
 
 public class ColorChange : MonoBehaviour
@@ -10,7 +11,6 @@ public class ColorChange : MonoBehaviour
 
     }
     int parameter = 0;
-    int way = 1;
     // Update is called once per frame
     void Update()
     {
@@ -18,29 +18,27 @@ public class ColorChange : MonoBehaviour
 
         if (renderer != null)
         {
-            // マテリアルを取得
             Material material = renderer.material;
 
-            // パラメータの値を0から1の範囲に正規化
             float normalizedParameter = Mathf.Clamp01(parameter / 1000f);
 
-            // 色の変化を計算
-            Color startColor = Color.white; // パラメータが0の場合の色（白）
-            Color endColor = Color.red; // パラメータが100の場合の色（赤）
+            Color startColor = Color.white;
+            Color endColor = Color.red;
             Color newColor = Color.Lerp(startColor, endColor, normalizedParameter);
 
-            // マテリアルの色を変更
             material.color = newColor;
 
-            this.parameter += this.way;
-            if (this.parameter >= 500)
+            string filePath = "./test.csv";
+            StreamReader reader = new StreamReader(filePath);
+
+            string line = null;
+            while (!reader.EndOfStream)
             {
-                this.way = -1;
+                line = reader.ReadLine();
             }
-            else if (this.parameter <= 0)
-            {
-                this.way = 1;
-            }
+            reader.Close();
+
+            this.parameter = int.Parse(line);
         }
     }
 }
