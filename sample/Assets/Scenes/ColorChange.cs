@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.IO;
@@ -37,8 +38,14 @@ public class ColorChange : MonoBehaviour
                 line = reader.ReadLine();
             }
             reader.Close();
-
-            this.parameter = int.Parse(line);
+            try
+            {
+                this.parameter = int.Parse(line);
+            }
+            catch (Exception e)
+            {
+                ;
+            }
         }
     }
 }
