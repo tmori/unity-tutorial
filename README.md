@@ -65,7 +65,7 @@ Unity Hub を起動し、右上の「開く」をクリックして、先ほど�
 
 ## 実行方法
 
-本プロジェクトのプロジェクトビューの `Assets/Scens` から `07_materials` をダブルクリックしてください。
+本プロジェクトのプロジェクトビューの `Assets/Scenes` から `07_materials` をダブルクリックしてください。
 
 ![スクリーンショット 2023-05-15 20 06 39](https://github.com/tmori/unity-tutorial/assets/164193/3cad7332-b7cb-47fb-8588-cb6ba898fcfe)
 
