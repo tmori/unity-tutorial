@@ -3,9 +3,11 @@ using System.Collections;
 using System.Collections.Generic;
 using System.IO;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class ColorChange : MonoBehaviour
 {
+    public Text value;
     // Start is called before the first frame update
     void Start()
     {
@@ -30,21 +32,29 @@ public class ColorChange : MonoBehaviour
             material.color = newColor;
 
             string filePath = "./test.csv";
-            StreamReader reader = new StreamReader(filePath);
-
-            string line = null;
-            while (!reader.EndOfStream)
-            {
-                line = reader.ReadLine();
-            }
-            reader.Close();
             try
             {
+                StreamReader reader = new StreamReader(filePath);
+                string line = null;
+                while (!reader.EndOfStream)
+                {
+                    line = reader.ReadLine();
+                }
+                reader.Close();
                 this.parameter = int.Parse(line);
+                if (parameter < 0)
+                {
+                    parameter = 0;
+                }
+                else if (parameter > 1000)
+                {
+                    parameter = 1000;
+                }
+                this.value.text = parameter.ToString();
             }
             catch (Exception e)
             {
-                ;
+                parameter = 0;
             }
         }
     }
